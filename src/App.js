@@ -1,7 +1,5 @@
 import React from "react";
-import RestaurantCard from "./RestaurantCard";
-import SampleComponent1 from "./SampleComponent1";
-import AlexaImage from './images/alexa.jpg'
+import RestaurantCard from "./App1Components/RestaurantCard";
 import './App.css'
 
  // Normal JS code can be written here

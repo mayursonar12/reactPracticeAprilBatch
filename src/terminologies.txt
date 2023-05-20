@@ -19,4 +19,4 @@ One way data binding in React.
  - View to model
  - Model to View
 
-
+Why we use React Fragments
