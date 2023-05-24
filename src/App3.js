@@ -1,8 +1,7 @@
 import React from "react";
-import { useState } from "react";
-
 import './App.css'
-import AnimalShow from "./App2Components/AnimalShow";
+import ImageList from "./App3Components/ImageList";
+import SearchBar from "./App3Components/SearchBar";
 
  // Normal JS code can be written here
 
@@ -10,40 +9,25 @@ import AnimalShow from "./App2Components/AnimalShow";
  // Then we need to make that variable a 'state' and then update that state through function.
  // This will help React to understand that you would like to re-render the component.
 
-
- const animalList = ['bird', 'dog', 'horse', 'gator', 'cat'];
-
- var randomNumber = Math.random();
- var myRange = randomNumber*animalList.length;
- var myIndex = Math.floor(myRange);
-console.log(myIndex);
-
-
 var App3 = () => {
-    var counter = 0;
 
-    const [animalCount, setAnimalCount] = useState(0);
+    let myCar = "Honda";
 
-    //var animalArray = [<AnimalShow/>, <AnimalShow/>];
-    var animalArray = [];
-    for (let i = 0; i< animalCount; i++) {
-        animalArray.push(<AnimalShow type={animalList[myIndex]} key={i}/>);
+    function callMe(searchTerm){
+        console.log("Call me function is called....")
+        console.log("Query param is :"+ searchTerm);
     }
 
-    function increment () {
-        counter += 1;   // counter = counter +1;
-        setAnimalCount(animalCount+1);
-    }
+    // Next steps: to call the fetch function and pass it the searchTerm
+    // It should return us some imag list
+    // Pass this imageList to ImageList component
+    
+    var images =[];
 
     return (
         <>
-            App3
-            <br></br>
-            {animalCount}
-            <br></br>
-            <button onClick={increment}>Add Animal</button>
-            <br></br>
-            {animalArray}
+            <SearchBar str1={myCar} cb={callMe}/>
+            <ImageList imgList={images}/>
         </>
     )
 }

@@ -10,42 +10,39 @@ import AnimalShow from "./App2Components/AnimalShow";
  // Then we need to make that variable a 'state' and then update that state through function.
  // This will help React to understand that you would like to re-render the component.
 
+function getRandomAnimal(){
+    var animals = ['horse', 'cat', 'dog', 'gator', 'bird'];
+    var randomNumber = Math.random();
+    var myRange = randomNumber*animals.length;
+    var myIndex = Math.floor(myRange);
 
+    return animals[myIndex];
+}
 
 var App2 = () => {
 
-    var [animalCount, setCount] = useState(0);
+    // Create an animal array state
+    const [animalsList, setAnimal] = useState([]);
 
-
-    // function useMyState (initialValue) {
-    //     var array1 = [];
-    //     var func1 = function () {};
-    //     array1.push(initialValue);
-    //     array1.push(func1);
-    //     return array1;
-    // }
-    // console.log(useMyState(30));
-
-
-    // Normal JS code can be written here
-    // function handleClick () {
-    //     // Code to be executed on every button click
-    //     setCount(animalCount+1);
-    // }
-
-    // If you want to show a list of REACT COMPONENT, the we should create an ARRAY of these component
-    // Example:   var componentList = [<AnimalShow/>, <AnimalShow/>, <AnimalShow/>, <AnimalShow/>, <AnimalShow/>, <AnimalShow/>]
-    var componentList = [];
-    for (let i =0; i<animalCount; i++) {
-        componentList.push( <AnimalShow/>);
+    function addAnimal(){
+        // When we add animal, we will update state
+        setAnimal([...animalsList, getRandomAnimal()]);
+        console.log(animalsList);
     }
 
+    var animalsToRender = animalsList.map(animal=>{
+        return <AnimalShow type={animal}/>
+    })
+
     return (
-       <>
-        <button onClick={() => setCount(animalCount+1)}> Add Animal</button>
-        {componentList}
-       </>
-    );
+        <>
+            <button onClick={addAnimal}>Add Animal</button>
+            <div style={{'display': 'flex', 'flex-wrap':'wrap'}}>
+
+                {animalsToRender}
+            </div>
+        </>
+    )
 }
 
 
