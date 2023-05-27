@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import './App.css'
 import ImageList from "./App3Components/ImageList";
 import SearchBar from "./App3Components/SearchBar";
+import searchImages from "./api";
 
  // Normal JS code can be written here
 
@@ -11,23 +12,33 @@ import SearchBar from "./App3Components/SearchBar";
 
 var App3 = () => {
 
-    let myCar = "Honda";
+    const [imageList, setImages] = useState([]);
+    const [numberOfImages, setnumberOfImages] = useState(0);
 
-    function callMe(searchTerm){
+    async function callMe (searchTerm){
         console.log("Call me function is called....")
         console.log("Query param is :"+ searchTerm);
+        const response = await searchImages(searchTerm);
+        //console.log(response.data.results);
+
+        // This call will take care of re-rendering this App3 component.
+        // And the updated imageList will be sent to ImageList component
+        setImages(response.data.results);
+
+        setnumberOfImages(response.data.results.length);
+
     }
 
     // Next steps: to call the fetch function and pass it the searchTerm
     // It should return us some imag list
     // Pass this imageList to ImageList component
     
-    var images =[];
+    //var images =[];
 
     return (
         <>
-            <SearchBar str1={myCar} cb={callMe}/>
-            <ImageList imgList={images}/>
+            <SearchBar cb={callMe}/>
+            <ImageList images={imageList} noObjects={numberOfImages}/>
         </>
     )
 }
