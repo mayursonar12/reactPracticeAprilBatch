@@ -1,9 +1,12 @@
 import React from 'react'
 
 const ImageShow = ({imageDetails}) => {
+  console.log(imageDetails);
   return (
     <div>
-      <img src={imageDetails.urls.regular} alt="image"></img>
+      {/* {imageDetails.id} */}
+      <img src={imageDetails.urls.small} alt="image"></img>
+      {/* ImageShow commponent */}
       </div>
   )
 }
