@@ -22,11 +22,21 @@ var BookApp = () => {
         setBooks(updatedBooks);
     }
 
+    // Here we will now have a DeleteBook Callback function
+    const deleteBook = (bookTitleToDelete) => {
+        // This function will delete a book from our books list.
+        // Delete logic
+        const updatedBooks1 = books.filter((book)=>{
+            return book !== bookTitleToDelete;
+        })
+        setBooks(updatedBooks1);
+    }
+
     // Normal JS code can be written here
     return (
         <>
         <BookCreate onCreate={createBook}/>
-        <BookList bookList={books}/>
+        <BookList bookList={books} onDelete={deleteBook}/>
         </>
     );
 }

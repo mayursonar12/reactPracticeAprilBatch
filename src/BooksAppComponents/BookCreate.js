@@ -10,8 +10,27 @@ const BookCreate = ({onCreate}) => {
         setBookTitle(eventDetails.target.value);
   }
 
+  // ["HP1", "HP2"]
+  // [
+  //   {
+  //     'id': 1,
+  //     'title': "HP1"
+  //   },
+  //   {
+  //     'id': 2,
+  //     'title': "HP2"
+  //   },
+  //   {
+  //     'id': 3,
+  //     'title': "HP3"
+  //   },
+  // ]
+
   function handleClick() {
-    onCreate(bookTitle);
+    if (bookTitle !== "") {
+      onCreate(bookTitle);
+      setBookTitle('');
+    }
   }
 
   return (
