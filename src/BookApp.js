@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import BookCreate from "./BooksAppComponents/BookCreate";
 import BookList from "./BooksAppComponents/BookList";
 
+import BooksContext from "./BooksAppComponents/contexts/BooksContext";
+import { userContext } from "./BooksAppComponents/contexts/BooksContext";
+
  // Normal JS code can be written here
 
 var BookApp = () => {
@@ -32,11 +35,22 @@ var BookApp = () => {
         setBooks(updatedBooks1);
     }
 
+    var contextObjToShare = {
+        deleteBookUsingContext: deleteBook
+    }
+
     // Normal JS code can be written here
     return (
         <>
-        <BookCreate onCreate={createBook}/>
-        <BookList bookList={books} onDelete={deleteBook}/>
+        <BooksContext.Provider value={contextObjToShare}>
+            <userContext.Provider value={'userDetails'}>
+
+                <BookCreate onCreate={createBook}/>
+                
+                <BookList bookList={books}/>
+            </userContext.Provider>
+          
+        </BooksContext.Provider>
         </>
     );
 }
