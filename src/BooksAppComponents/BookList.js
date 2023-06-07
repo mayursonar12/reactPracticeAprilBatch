@@ -1,7 +1,13 @@
 import React from 'react'
 import BookShow from './BookShow'
 
-const BookList = ({bookList}) => {
+import { useContext } from 'react';
+import BooksContext from './contexts/BooksContext';
+
+const BookList = () => {
+
+  const value = useContext(BooksContext);
+  var bookList = value.books;
     // You bookList should create BookShow components as per the #books in list
 
     // To create LIST of Components

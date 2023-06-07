@@ -1,0 +1,28 @@
+Starting with React using create-react-app
+Understanding basic file structure
+Understanding the ReactDOM and HTML root and how we render our React app in this root 
+What are functional components
+Starting with a basic hello world app using a functional component
+
+State system in react
+Counter app using React states
+
+App to display some restaurant/Profile cards with some info in it
+    Intro to props system
+
+App to display animals on button click.
+    Intro to array States in React
+    How to update array state in react
+    What is difference in mechanism between 
+        string/boolean/number state and aray state update process
+
+App to create a search bar component.
+    Creating controlled elements in React. (example: input box)
+    Deciding the number of states needed and their place to create in project.
+    Child to parent communication 
+
+App to create a Book Add and Display application
+    Intro to Props drilling
+    How we can use Context t solve the props drilling
+
+

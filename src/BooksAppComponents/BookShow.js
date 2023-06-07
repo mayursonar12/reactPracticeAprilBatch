@@ -6,14 +6,14 @@ import BooksContext from './contexts/BooksContext';
 
 const BookShow = ({book}) => {
 
-  const val  = useContext(BooksContext);
-  console.log(val);
+  const booksContextObj  = useContext(BooksContext);
+  console.log(booksContextObj);
 
     const [showEdit, setShowEdit] = useState(false);
 
     function handleDeleteClick() {
         //onDelete(book);
-        val.deleteBookUsingContext(book);
+        booksContextObj.deleteBookUsingContext(book);
     }
 
     function handleEditClick() {
