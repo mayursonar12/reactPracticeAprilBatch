@@ -1,11 +1,10 @@
 import React from 'react'
 
-import { useContext } from 'react';
-import BooksContext from './contexts/BooksContext';
+import { useBookContext } from './customHooks/useBookContext';
 
 const BookEdit = ({book}) => {
 
-    const val = useContext(BooksContext);
+    const val = useBookContext();
     console.log(val);
 
     function handleSaveClick() {

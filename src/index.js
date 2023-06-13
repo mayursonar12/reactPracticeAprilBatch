@@ -8,6 +8,8 @@ import {App2} from "./App2";
 import { App3 } from "./App3";
 import BookApp from "./BookApp";
 import { CustomProviderByMayur } from './BooksAppComponents/contexts/BooksContext';
+import CounterApp from './CounterApp';
+import NavBarApp from './NavBarApp';
 
 
 
@@ -17,7 +19,5 @@ var rootDiv = document.getElementById('root');
 var root = ReactDOM.createRoot(rootDiv);
 
 root.render(
-  <CustomProviderByMayur>    
-        <BookApp/>
-    </CustomProviderByMayur>
+  <NavBarApp/>
 );

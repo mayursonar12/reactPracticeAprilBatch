@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import BookEdit from './BookEdit';
 
-import { useContext } from 'react';
-import BooksContext from './contexts/BooksContext';
+import { useBookContext } from './customHooks/useBookContext';
 
 const BookShow = ({book}) => {
 
-  const booksContextObj  = useContext(BooksContext);
+  const booksContextObj  = useBookContext();
   console.log(booksContextObj);
 
     const [showEdit, setShowEdit] = useState(false);

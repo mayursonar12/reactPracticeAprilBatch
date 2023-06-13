@@ -24,5 +24,9 @@ App to create a search bar component.
 App to create a Book Add and Display application
     Intro to Props drilling
     How we can use Context t solve the props drilling
+    Custom Provider (good to know topic)
+        This will help to achieve 'Separation of concerns' and 'SRP'
+        
+
 
 
