@@ -14,6 +14,9 @@ const Navbar = () => {
                 <li>
                     <Link to="about">About us</Link> 
                 </li>
+                <li>
+                    <Link to="product/nike-trouser-92398">Nike product</Link> 
+                </li>
             </ul>  
     </navBar>
   )

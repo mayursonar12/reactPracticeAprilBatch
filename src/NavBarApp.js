@@ -15,8 +15,8 @@ const NavBarApp = () => {
         <Routes>
             <Route path="/" element={<HomePage/>} >
               <Route path="contact" element={<ContactUs/>} />
-              <Route path="about" element={<AboutUs/>} />
-              <Route path="product/:id" element={<ProductDetails/>} />
+              <Route path="about" element={<AboutUs/>} />              
+              <Route path="product/:category" element={<ProductDetails/>} />
               <Route path="*" element={<ErrorPage/>} />
             </Route>
           

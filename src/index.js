@@ -10,6 +10,7 @@ import BookApp from "./BookApp";
 import { CustomProviderByMayur } from './BooksAppComponents/contexts/BooksContext';
 import CounterApp from './CounterApp';
 import NavBarApp from './NavBarApp';
+import CounterAppForReducer from './useReducerApp/CounterAppForReducer';
 
 
 
@@ -19,5 +20,5 @@ var rootDiv = document.getElementById('root');
 var root = ReactDOM.createRoot(rootDiv);
 
 root.render(
-  <NavBarApp/>
+  <CounterAppForReducer/>
 );
