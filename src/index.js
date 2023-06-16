@@ -11,6 +11,7 @@ import { CustomProviderByMayur } from './BooksAppComponents/contexts/BooksContex
 import CounterApp from './CounterApp';
 import NavBarApp from './NavBarApp';
 import CounterAppForReducer from './useReducerApp/CounterAppForReducer';
+import ClassBasedComponent from './ClassBasedComponent';
 
 
 
@@ -20,5 +21,5 @@ var rootDiv = document.getElementById('root');
 var root = ReactDOM.createRoot(rootDiv);
 
 root.render(
-  <CounterAppForReducer/>
+  <ClassBasedComponent name="Tom" lastName="Hank"/>
 );
